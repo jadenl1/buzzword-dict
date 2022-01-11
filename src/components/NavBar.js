@@ -1,13 +1,16 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const NavBar = () => {
     return (
         <header>
-            <img src = {require('../images/logo.png')} alt = 'logo'/>
+            <Link to = '/'>
+                <img src = {require('../images/logo.png')} alt = 'logo'/>
+            </Link>
             <div id = 'nav-pages'>
-                <a href = ''>contact</a>
-                <a href = ''>about</a>
-                <a href = ''>sign-in</a>
+                <a href = ''><Link to='/contact'>contact</Link></a>
+                <a href = ''><Link to='/about'>about</Link></a>
+                <a href = ''><Link to='/signin'>sign-in</Link></a>
             </div>
         </header>
     )
