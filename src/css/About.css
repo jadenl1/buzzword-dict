@@ -1,0 +1,38 @@
+:root{
+    --light-blue: #CBD4FF;
+    --clay-blue: #8C9BE5;
+    --dark-blue: #13131C;
+    --lesser-dark-blue: #353558;
+    --bright-orange: #ff8484;
+}
+
+article{
+    width: 70vw;
+    color: var(--light-blue);
+}
+
+article h1{
+    color: var(--lesser-dark-blue);
+    font-weight: 400;
+    font-size: 30px;
+}
+
+.center{
+    margin-top: 90px;
+    display: flex;
+    justify-content: center;
+}
+
+#credit1{
+    color: var(--lesser-dark-blue);
+}
+
+@media screen and (max-width:800px){
+    h1{
+        padding-bottom: 10px;
+    }
+
+    p{
+        padding-bottom: 5px;
+    }
+}

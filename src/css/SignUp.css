@@ -1,0 +1,68 @@
+:root{
+    --light-blue: #CBD4FF;
+    --clay-blue: #8C9BE5;
+    --dark-blue: #13131C;
+    --bright-orange: #ff8484;
+    --lesser-dark-blue: #353558;
+}
+
+#signup{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+    flex-direction: column;
+
+    margin-top: 40px;
+    margin-bottom: 200px;
+}
+
+#card{
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input{
+    width: 25vw;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-family: roboto mono;
+    color: var(--light-blue);
+    background-color: #ffffff13;
+    border: 0;
+    border-radius: 30px;
+}
+
+input:focus {
+    outline: none;
+}
+
+p{
+    margin: 10px;
+    color: var(--light-blue);
+}
+
+h2{
+    font-size: 30px;
+    margin: 20px 0;
+    font-weight: 400;
+    color: var(--lesser-dark-blue);
+}
+
+button{
+    background-color: var(--lesser-dark-blue);
+    border: 0;
+    border-radius: 30px;
+    font-family: roboto mono;
+    color: var(--light-blue);
+    padding: 14px 25px;
+    margin-top: 40px;
+}
+
+@media screen and (max-width:800px){
+    input{
+        width: 60vw;
+    }
+}

@@ -1,4 +1,5 @@
 import React from 'react'
+import '../images/search-icon.png'
 
 const Search = () => {
 
@@ -23,7 +24,7 @@ const Search = () => {
             </h1>
             {/* <img src="" alt="verified" /> */}
             <input type = 'text' id = 'search-bar' placeholder='Search all buzzwords...' onKeyDown={userSearchEnter} />
-            <input type="image" src={require('../images/search-icon.png')} id = 'search-icon' onClick={userSearchClick}/>
+            {/* <input type="image" src={require('../images/search-icon.png')} id = 'search-icon' onClick={userSearchClick}/> */}
         </div>
     )
 }

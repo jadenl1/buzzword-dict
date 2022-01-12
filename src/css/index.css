@@ -3,6 +3,7 @@
     --light-blue: #CBD4FF;
     --clay-blue: #8C9BE5;
     --dark-blue: #13131C;
+    --lesser-dark-blue: #353558;
     --bright-orange: #ff8484;
 }
 
@@ -121,10 +122,13 @@ header img{
 
 }
 
+footer{
+    margin: 30px 0;
+}
+
 footer #links-container{
     display: flex;
     justify-content: space-evenly;
-    margin: 16vh 0 30px 0;
 }
 
 #links-container #links{
@@ -152,6 +156,10 @@ footer p{
     margin-bottom: 30px;
 }
 
+#forum{
+    margin-left: 30px;
+}
+
 @media screen and (max-width:800px){
     header #nav-pages{
         width: 90px;
@@ -159,11 +167,12 @@ footer p{
     }
     
     header #nav-pages a{
+        color: var(--light-blue);
         text-align: center;
         padding: 10px 0px;
         margin: 10px 0;
-        border-radius: 8px;
-        background-color: #0d0f16;
+        border-radius: 30px;
+        background-color: var(--lesser-dark-blue);
     }
     
     header img{

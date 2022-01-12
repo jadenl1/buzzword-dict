@@ -10,7 +10,7 @@ const NavBar = () => {
             <div id = 'nav-pages'>
                 <a href = ''><Link to='/contact'>contact</Link></a>
                 <a href = ''><Link to='/about'>about</Link></a>
-                <a href = ''><Link to='/signin'>sign-in</Link></a>
+                <a href = ''><Link to='/signup'>sign-up</Link></a>
             </div>
         </header>
     )
