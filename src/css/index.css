@@ -160,10 +160,10 @@ footer p{
     
     header #nav-pages a{
         text-align: center;
-        padding: 10px 10px;
+        padding: 10px 0px;
         margin: 10px 0;
         border-radius: 8px;
-        background-color: #00000069;
+        background-color: #0d0f16;
     }
     
     header img{
