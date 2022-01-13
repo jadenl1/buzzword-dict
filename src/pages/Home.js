@@ -5,8 +5,8 @@ import Search from '../components/Search';
 import PageList from '../components/PageList';
 import Footer from '../components/Footer';
 
-
 const Home = () => {
+
     return (
         <>
             <NavBar/>

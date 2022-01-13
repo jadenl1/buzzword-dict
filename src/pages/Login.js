@@ -3,18 +3,17 @@ import NavBar from '../components/NavBar'
 import Footer from '../components/Footer'
 
 import { Link, useNavigate } from 'react-router-dom';
-
 import { AuthProvider, useAuth } from '../contexts/AuthContext'
 
+// change to login css
 import '../css/SignUp.css'
 
-export default function SignUp(){
+export default function Login(){
 
     const emailRef = useRef();
     const passwordRef = useRef();
-    const passwordConfirmRef = useRef();
 
-    const { signup } = useAuth();
+    const { login } = useAuth();
     const [error, setError] = useState("");
     const [loading, setLoading] = useState(false);
 
@@ -23,17 +22,13 @@ export default function SignUp(){
     async function handleSubmit(e){
         e.preventDefault();
 
-        if(passwordRef.current.value !== passwordConfirmRef.current.value){
-            return setError('passwords do not match');
-        }
-
         try {
             setError("");
             setLoading(true);
-            await signup(emailRef.current.value, passwordRef.current.value);
+            await login(emailRef.current.value, passwordRef.current.value);
             navigate('/', {replace: true});
         } catch {
-            setError('failed to create an account');
+            setError('failed to sign in');
         }
         setLoading(false);
     }
@@ -44,7 +39,7 @@ export default function SignUp(){
             
             <div id = 'signup'>
                 <div id = 'card'>
-                    <h2>sign up</h2>
+                    <h2>log in</h2>
                     {error && <p id = 'error'>{error}</p>}
                     
                     <form onSubmit={handleSubmit} id='form'>
@@ -58,16 +53,11 @@ export default function SignUp(){
                             <input type='password' ref = {passwordRef} required/>
                         </form>
 
-                        <form id='password-confirm'>
-                            <p>confirm password</p>
-                            <input type='password' ref = {passwordConfirmRef} required/>
-                        </form>
-
-                        <button type='submit' disabled={loading}>sign up</button>
+                        <button type='submit' disabled={loading}>log in</button>
                     </form>
                 </div>
 
-                <p>already have an account? <Link to='/login'>Log In</Link></p>
+                <p>need an account? <Link to='/signup'>Sign Up</Link></p>
 
             </div>
             
