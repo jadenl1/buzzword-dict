@@ -12,7 +12,8 @@ import Browse from './pages/Browse';
 import SignUp from './pages/SignUp';
 import Login from './pages/Login';
 import Profile from './pages/Profile';
-// import PrivateRoute from './pages/PrivateRoute';
+import ForgotPassword from './pages/ForgotPassword';
+import UpdateProfile from './pages/UpdateProfile';
 
 import { AuthProvider } from './contexts/AuthContext';
 
@@ -20,7 +21,7 @@ const App = () => {
     return (
         <Routes>
             
-            <Route path='/' element={
+            <Route exact path='/' element={
                 <AuthProvider>
                     <Home/>
                 </AuthProvider>
@@ -38,19 +39,54 @@ const App = () => {
                 </AuthProvider>
             }/>
 
+            <Route exact path='/forgot-password' element={
+                <AuthProvider>
+                    <ForgotPassword/>
+                </AuthProvider>
+            }/>
+
             <Route exact path='/profile' element={
                 <AuthProvider>
                     <Profile/>
                 </AuthProvider>
             }/>
+
+            <Route path='/update-profile' element={
+                <AuthProvider>
+                    <UpdateProfile/>
+                </AuthProvider>
+            }/>
+
+            <Route exact path='/about' element={
+                <AuthProvider>
+                    <About/>
+                </AuthProvider>
+            }/>
             
-            <Route exact path='/about' element={<About/>}/>
-            <Route exact path='/contact' element={<Contact/>}/>
+            <Route exact path='/contact' element={
+                <AuthProvider>
+                    <Contact/>
+                </AuthProvider>
+            }/>
 
-            <Route exact path='/trending' element={<Trending/>}/>
-            <Route exact path='/community' element={<Community/>}/>
-            <Route exact path='/browse' element={<Browse/>}/>
+            <Route exact path='/trending' element={
+                <AuthProvider>
+                    <Trending/>
+                </AuthProvider>
+            }/>
 
+            <Route exact path='/community' element={
+                <AuthProvider>
+                    <Community/>
+                </AuthProvider>
+            }/>
+
+            <Route exact path='/browse' element={
+                <AuthProvider>
+                    <Browse/>
+                </AuthProvider>
+            }/>
+        
         </Routes>
     )
 }

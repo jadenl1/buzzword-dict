@@ -7,14 +7,14 @@ import { AuthProvider, useAuth } from '../contexts/AuthContext'
 
 import '../css/SignUp.css'
 
-export default function Login(){
-
+export default function ForgotPassword() {
+    
     const emailRef = useRef();
-    const passwordRef = useRef();
 
-    const { login } = useAuth();
+    const { resetPassword } = useAuth();
     const [error, setError] = useState("");
     const [loading, setLoading] = useState(false);
+    const [message, setMessage] = useState("");
 
     const navigate = useNavigate();
 
@@ -22,42 +22,38 @@ export default function Login(){
         e.preventDefault();
 
         try {
+            setMessage('')
             setError("");
             setLoading(true);
-            await login(emailRef.current.value, passwordRef.current.value);
-            navigate('/', {replace: true});
+            await resetPassword(emailRef.current.value);
+            setMessage('Check your inbox for further instructions')
         } catch {
-            setError('failed to log in');
+            setError('failed to reset password');
         }
         setLoading(false);
     }
 
+    
     return (
         <>
             <NavBar/>
             
             <div id = 'signup'>
                 <div id = 'card'>
-                    <h2>log in</h2>
+                    <h2>password reset</h2>
                     {error && <p id = 'error'>{error}</p>}
-                    
+                    {message && <p id = 'message'>{message}</p>}
                     <form onSubmit={handleSubmit} id='form'>
                         <form id='email'>
                             <p>email</p>
                             <input type='email' ref = {emailRef} required/>
                         </form>
 
-                        <form id='password'>
-                            <p>password</p>
-                            <input type='password' ref = {passwordRef} required/>
-                        </form>
-
-                        <button type='submit' disabled={loading}>log in</button>
+                        <button type='submit' disabled={loading}>reset password</button>
                     </form>
                 </div>
 
-                <p>need an account? <Link to='/signup'>Sign Up</Link></p>
-                <Link to='/forgot-password'>forgot password?</Link>
+                <p><Link to='/login'>Back to Login</Link></p>
 
             </div>
             

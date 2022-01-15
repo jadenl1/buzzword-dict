@@ -4,6 +4,7 @@
     --dark-blue: #13131C;
     --bright-orange: #ff8484;
     --lesser-dark-blue: #353558;
+    --dark-dark-blue: #0e0e16;
 }
 
 #signup{
@@ -84,8 +85,18 @@ a{
     color: var(--clay-blue);
 }
 
+#message{
+    color: rgb(151, 196, 255);
+}
+
 @media screen and (max-width:800px){
     input{
         width: 60vw;
+    }
+}
+
+@media screen and (max-width:1000px){
+    input{
+        width: 55vw;
     }
 }

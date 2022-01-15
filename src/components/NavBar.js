@@ -6,6 +6,7 @@ import { MdAccountCircle } from "react-icons/md"
 
 const NavBar = () => {
 
+
     let user = useAuth().currentUser;
 
 

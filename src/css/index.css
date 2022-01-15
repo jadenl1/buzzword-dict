@@ -28,6 +28,7 @@ header{
 header #nav-pages{
     position: absolute;
     right: 6%;
+    /* background-color: yellow; */
     display: flex;
     justify-content: space-between;
     width: 400px;
@@ -35,8 +36,10 @@ header #nav-pages{
 
 
 header #nav-pages a{
+    /* background-color: red; */
     text-decoration: none;
     color: var(--clay-blue);
+    
     direction: reverse;
     transition: 0.3s;
 }
@@ -164,7 +167,7 @@ footer p{
     margin-left: 30px;
 }
 
-@media screen and (max-width:800px){
+@media screen and (max-width:850px){
     header #nav-pages{
         width: 90px;
         flex-direction: column-reverse;
@@ -195,5 +198,11 @@ footer p{
 
     #body2 #divider{
         font-size: 20px;
+    }
+}
+
+@media screen and (max-width:900px){
+    #body #search-bar{
+        width: 60vw;
     }
 }
