@@ -1,3 +1,60 @@
-button{
+:root{
+    --light-blue: #CBD4FF;
+    --clay-blue: #8C9BE5;
+    --dark-blue: #13131C;
+    --lesser-dark-blue: #212129;
+    --bright-orange: #ff8484;
+}
 
+#profile-head{
+    height: 40vh;
+    padding-left: 100px;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+
+#profile-head #full-name{
+    display: flex;
+    align-items:flex-end;
+}
+
+#profile-head #email-ext{
+    position: relative;
+    bottom: 5px;
+    padding-left: 5px;
+    color: var(--lesser-dark-blue)
+}
+
+#profile-head #name{
+    color: var(--light-blue);
+    font-weight: 400;
+    font-size: 40px;
+}
+
+#profile-head p{
+    color: var(--clay-blue);
+    margin: 0;
+    font-size: 18px;
+}
+
+
+#profile-head #buttons{
+    margin-top: -25px;
+    display: flex;
+    width: 280px;
+    justify-content: space-between;
+}
+
+@media screen and (max-width:850px){
+    #profile-head #full-name{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+@media screen and (max-width:600px){
+    #profile-head #full-name #name{
+        font-size: 8vw;
+    }
 }

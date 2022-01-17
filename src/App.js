@@ -18,6 +18,7 @@ import UpdateProfile from './pages/UpdateProfile';
 import { AuthProvider } from './contexts/AuthContext';
 
 const App = () => {
+
     return (
         <Routes>
             
