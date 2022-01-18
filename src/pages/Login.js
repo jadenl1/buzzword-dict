@@ -49,7 +49,14 @@ export default function Login(){
 
                         <form id='password'>
                             <p>password</p>
-                            <input type='password' ref = {passwordRef} required/>
+                            <input type='password' ref = {passwordRef}
+                            onKeyPress={
+                                (e) => {
+                                    if (e.key === "Enter"){
+                                        handleSubmit(e);
+                                    }
+                                }
+                            } required/>
                         </form>
 
                         <button type='submit' disabled={loading}>log in</button>

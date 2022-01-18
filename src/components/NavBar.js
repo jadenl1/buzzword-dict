@@ -4,6 +4,8 @@ import { useAuth } from '../contexts/AuthContext'
 
 import { MdAccountCircle } from "react-icons/md"
 
+import '../css/NavBar.css'
+
 const NavBar = () => {
 
 

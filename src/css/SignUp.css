@@ -18,10 +18,6 @@
     margin-bottom: 200px;
 }
 
-#error{
-    color: var(--bright-orange);
-}
-
 #form{
     display: flex;
     flex-direction: column;

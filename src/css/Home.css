@@ -17,7 +17,7 @@
     border-radius: 18px;
     width: 600px;
     padding: 30px;
-    margin-top: 10px;
+    margin: 17px 0;
     text-align: left;
 }
 
@@ -34,7 +34,6 @@
 
 .showResults p{
     margin: 0;
-    margin-bottom: 15px;
     color: var(--light-blue);
 }
 
@@ -42,8 +41,133 @@
     margin-bottom: 25px;
 }
 
+#words-container{
+    display: flex;
+    justify-content: center;
+}
+
+.words-list{
+    position: absolute;
+    width: 33vw;
+    height: auto;
+    margin-top: 10px;
+    border-radius: 10px;
+    background-color: rgb(50, 50, 63);
+    animation: 0.25s ease-out slideInFromTop2;
+    overflow: hidden;
+    overflow-y: auto;
+}
+
+.words-list::-webkit-scrollbar{
+    display: none;
+}
+
+#data-item{
+    cursor: pointer;
+    padding: 6px 10px;
+    text-align: left;
+    border-radius: 5px;
+
+    direction: reverse;
+    transition: 0.1s;
+    color: var(--light-blue);
+}
+
+#data-item:first-child{
+    background-color: rgb(62, 62, 78);
+}
+
+#data-item:hover{
+    transition: 0.1s;
+    background-color: #4a4a5c;
+}
+
+#body{
+    text-align: center;
+    margin-top: 13vh;
+}
+
+#body h1{
+    margin-bottom: 10px;
+    color: var(--clay-blue);
+    font-weight: 400;
+}
+
+#body #search-bar{
+    width: 33vw;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-family: roboto mono;
+    color: var(--light-blue);
+    background-color: #ffffff13;
+    border: 0;
+    border-radius: 30px;
+}
+
+#search-bar:focus {
+    outline: none;
+}
+
+#body2 #divider{
+    font-size: 2.5vh;
+    margin-top: 7vh;
+    text-align: center;
+    color: #cbd4ff23;
+}
+
+#pages{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 5vh;
+    margin-bottom: 20vh;
+}
+
+#pages a{
+    display: table;
+    margin: 0.2vh auto 0px auto;
+    padding: 5px;
+    font-size:20px;
+    text-decoration: none;
+    color: var(--light-blue);
+    font-size: 20px;
+    
+    direction: reverse;
+    transition: 0.2s;
+}
+
+#pages a:hover{
+    color: var(--bright-orange);
+    transition: 0.3s;
+}
+
 @media screen and (max-width:850px){
+
+    #body2 #divider{
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width:900px){
     .showResults{
-        margin: 10px 20px;
+        margin: 0 90px;
+        margin-top: 50px;
+    }
+
+    .words-list{
+        width: 60vw;
+    }
+
+    #body #search-bar{
+        width: 60vw;
+    }
+}
+
+@keyframes slideInFromTop2 {
+    0% {
+      transform: translateY(-10%);
+    }
+    100% {
+      transform: translateY(0);
     }
 }
