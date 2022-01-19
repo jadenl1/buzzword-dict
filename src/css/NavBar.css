@@ -3,19 +3,18 @@
     --clay-blue: #8C9BE5;
     --dark-blue: #13131C;
     --lesser-dark-blue: #212129;
+    --blue-dark-blue:#1b1b24;
     --bright-orange: #ff8484;
 }
 
 header{
     padding: 40px 30px;
-    /* background-color: red; */
     display: flex;
 }
 
 header #nav-pages{
     position: absolute;
     right: 6%;
-    /* background-color: yellow; */
     display: flex;
     justify-content: space-between;
     width: 400px;
@@ -23,7 +22,6 @@ header #nav-pages{
 
 
 header #nav-pages a{
-    /* background-color: red; */
     text-decoration: none;
     color: var(--clay-blue);
     
@@ -37,6 +35,7 @@ header #nav-pages a{
 }
 
 header #nav-pages a:hover{
+    cursor: pointer;
     color: var(--bright-orange); 
     transition: 0.3s;
 }

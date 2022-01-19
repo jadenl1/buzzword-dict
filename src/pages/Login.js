@@ -39,7 +39,7 @@ export default function Login(){
             <div id = 'signup'>
                 <div id = 'card'>
                     <h2>log in</h2>
-                    {error && <p id = 'error'>{error}</p>}
+                    {error && <div id = 'error-container'><p id = 'error'>{error}</p></div>}
                     
                     <form onSubmit={handleSubmit} id='form'>
                         <form id='email'>

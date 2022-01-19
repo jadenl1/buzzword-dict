@@ -21,7 +21,7 @@
 
 #profile-head #email-ext{
     position: relative;
-    bottom: 5px;
+    bottom: 12px;
     padding-left: 5px;
     color: var(--lesser-dark-blue)
 }
@@ -29,13 +29,17 @@
 #profile-head #name{
     color: var(--light-blue);
     font-weight: 400;
-    font-size: 40px;
+    font-size: 60px;
 }
 
 #profile-head p{
     color: var(--clay-blue);
     margin: 0;
     font-size: 18px;
+}
+
+footer{
+    margin-top: 300px;    
 }
 
 

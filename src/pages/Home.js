@@ -1,4 +1,5 @@
-import {React, useState} from 'react'
+import { React, useState } from 'react'
+import { useEffect } from 'react/cjs/react.development'
 import { Link } from 'react-router-dom'
 
 import NavBar from '../components/NavBar';
@@ -6,13 +7,32 @@ import Footer from '../components/Footer';
 
 import '../css/Home.css'
 
-import { words } from '../db/words.js';
+import { db } from '../firebase';
 
 
 const Home = () => {
 
-    const [searchWord, setSearchWord] = useState("");
-   
+    // fetching firestore database
+    const [posts, setPosts] = useState([]);
+
+    useEffect(() => {
+        const getPostsFromFirebase = [];
+        const subscriber = db
+        .collection('words')
+        .onSnapshot((querySnapshot) => {
+            querySnapshot.forEach((doc) => {
+                getPostsFromFirebase.push({
+                    ...doc.data(),
+                    key: doc.id,
+                });
+            });
+            setPosts(getPostsFromFirebase);
+        });
+
+        return () => subscriber();
+    }, []);
+
+    //setting all hooks up
     const [word, setWord] = useState("");
     const [pos, setPos] = useState("");
     const [def, setDef] = useState("");
@@ -21,12 +41,12 @@ const Home = () => {
 
     const [filteredData, setFilteredData] = useState([]);
 
+    //takes in a word, then searches dictionary by word and finds the relative part of speech & definition
     function getMeaning(userWord) {
         try{
             setError('');
-
-            const index = words.map(object => object.word).indexOf(userWord);
-            const wordObj = words[index];        
+            const index = posts.map(object => object.word).indexOf(userWord);
+            const wordObj = posts[index];        
             setWord(wordObj.word);
             setPos(wordObj.pos);
             setDef(wordObj.definition);
@@ -35,9 +55,10 @@ const Home = () => {
         }
     }
 
+    //everytime the user updates their search, the suggestions list is updated
     const handleFilter = (event) => {
         const userSearch = event.target.value;
-        const newFilter = words.filter((value) => {
+        const newFilter = posts.filter((value) => {
             return value.word.toLowerCase().includes(userSearch.toLowerCase());
         })
         if(userSearch === ""){
@@ -49,6 +70,7 @@ const Home = () => {
 
     return (
         <>
+
             <NavBar/>
             
             <div id = 'body'>
@@ -59,20 +81,20 @@ const Home = () => {
                     OFFICIAL DICTIONARY
                 </h1>
 
+
                 <input type = 'text' id = 'search-bar' autocomplete="off" placeholder='Search all buzzwords...'
                     onChange={(e) => {
                         setError("");
                         handleFilter(e);
-                        setSearchWord((e.target.value).toLowerCase());
                     }}
                     onKeyPress={
                         (e) => {
                             if (e.key === "Enter"){
                                 try{
-                                    setError("");
                                     e.preventDefault();
                                     getMeaning(filteredData[0].word);
                                     setFilteredData([]);
+                                    setError("");
                                 } catch {
                                     setError('404 - word not found');
                                 }
@@ -107,7 +129,7 @@ const Home = () => {
                         
                             <p id = 'pos'>{pos}</p>
 
-                            <h4>Definition:</h4>
+                            <h4>definition &#8628;</h4>
                             <p>{def}</p>
                         </div>
                     </div>
@@ -123,17 +145,17 @@ const Home = () => {
                 </p>
                 <div id = 'pages'>
                     <Link to = '/trending'>
-                        <a href = "">
+                        <a>
                             trending
                         </a>
                     </Link>
                     <Link to = '/community'>
-                        <a href = "">
+                        <a>
                             community
                         </a>
                     </Link>
                     <Link to = '/browse'>
-                        <a href = "">
+                        <a>
                             browse
                         </a>
                     </Link>

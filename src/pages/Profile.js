@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import { useAuth } from '../contexts/AuthContext'
 
 import NavBar from '../components/NavBar'
+import Footer from '../components/Footer'
 
 import '../css/Profile.css'
 
@@ -42,6 +43,7 @@ export default function Profile(){
                     <a><button onClick={handleLogout}>log out</button></a>
                  </div>
             </div>
+            <Footer/>
         </>
     )
 }

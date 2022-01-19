@@ -6,10 +6,6 @@
     --bright-orange: #ff8484;
 }
 
-footer{
-    margin: 30px 0;
-}
-
 footer #links-container{
     display: flex;
     justify-content: space-evenly;
