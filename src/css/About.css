@@ -6,25 +6,39 @@
     --bright-orange: #ff8484;
 }
 
-article{
-    width: 70vw;
-    color: var(--light-blue);
-}
-
-article h1{
+#title{
     color: var(--lesser-dark-blue);
-    font-weight: 400;
-    font-size: 30px;
+    font-weight: 500;
+    margin-left: 70px;
 }
 
-.center{
-    margin-top: 90px;
+#about-container-1{
+    visibility: visible;
+    width: 900px;
     display: flex;
     justify-content: center;
+    flex-direction: column;
 }
 
-#credit1{
-    color: var(--lesser-dark-blue);
+#about-container-1 p{
+    font-size: 18px;
+    margin: 0;
+    margin-bottom: 20px;
+}
+
+#about-container-1 h3{
+    color: var(--clay-blue);
+    font-size: 20px;
+    font-weight: 400;
+}
+
+#center-1{
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
 }
 
 @media screen and (max-width:800px){
