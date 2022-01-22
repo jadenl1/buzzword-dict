@@ -6,8 +6,10 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import Trending from './pages/Trending';
-import Community from './pages/Community';
 import Browse from './pages/Browse';
+
+import Community from './pages/Community';
+import NewPost from './pages/NewPost';
 
 import SignUp from './pages/SignUp';
 import Login from './pages/Login';
@@ -79,6 +81,12 @@ const App = () => {
             <Route exact path='/community' element={
                 <AuthProvider>
                     <Community/>
+                </AuthProvider>
+            }/>
+
+            <Route exact path='/new-post' element={
+                <AuthProvider>
+                    <NewPost/>
                 </AuthProvider>
             }/>
 

@@ -108,7 +108,7 @@ const Home = () => {
                         <div className='words-list'>
                             {filteredData.slice(0, 7).map((value, key) => {
                                 return( 
-                                    <p id = 'data-item' onMouseDown={() => {
+                                    <p key = {key} id = 'data-item' onMouseDown={() => {
                                         getMeaning(value.word);
                                         setFilteredData([]);
                                     }}>

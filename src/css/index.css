@@ -33,7 +33,7 @@ html{
     border-radius: 10px;
     position: fixed;
     top: 0px;
-
+    z-index: 10;
     animation: 0.25s ease-out slideInFromTop;
 }
 

@@ -81,7 +81,7 @@
     border-radius: 5px;
 
     direction: reverse;
-    transition: 0.1s;
+    /* transition: 0.1s; */
     color: var(--light-blue);
 }
 
@@ -90,7 +90,7 @@
 }
 
 #data-item:hover{
-    transition: 0.1s;
+    /* transition: 0.1s; */
     background-color: #4a4a5c;
 }
 

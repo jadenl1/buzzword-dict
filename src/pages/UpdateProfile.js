@@ -10,7 +10,7 @@ import '../css/SignUp.css'
 
 export default function UpdateProfile(){
 
-    const emailRef = useRef();
+    // const emailRef = useRef();
     const passwordRef = useRef();
     const passwordConfirmRef = useRef();
 
@@ -31,9 +31,9 @@ export default function UpdateProfile(){
         const promises = []
         setError("");
         setLoading(true);
-        if (emailRef.current.value !== currentUser.email){
-            promises.push(updateEmail(emailRef.current.value))
-        }
+        // if (emailRef.current.value !== currentUser.email){
+        //     promises.push(updateEmail(emailRef.current.value))
+        // }
         if (passwordRef.current.value){
             promises.push(updatePassword(passwordRef.current.value))
         }
@@ -57,10 +57,10 @@ export default function UpdateProfile(){
                     {error && <p id = 'error'>{error}</p>}
                     
                     <form onSubmit={handleSubmit} id='form'>
-                        <form id='email'>
+                        {/* <form id='email'>
                             <p>email</p>
                             <input type='email' ref = {emailRef} required defaultValue={currentUser.email}/>
-                        </form>
+                        </form> */}
 
                         <form id='password'>
                             <p>password</p>

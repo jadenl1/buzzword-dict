@@ -1,0 +1,179 @@
+:root{
+    --light-blue: #CBD4FF;
+    --clay-blue: #8C9BE5;
+    --dark-blue: #13131C;
+    --lesser-dark-blue: #212129;
+    --bright-orange: #ff8484;
+}
+
+#title{
+    color: var(--lesser-dark-blue);
+    font-weight: 500;
+    margin-left: 70px;
+    margin-bottom: 50px;
+}
+
+#search-label{
+    color: var(--clay-blue);
+    font-weight: 400;
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+#community-body{
+    /* background-color: red; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#sub-title{
+    color: var(--clay-blue);
+    font-size: 20px;
+}
+
+#posts-top{
+    position: relative;
+    top: 18px;
+    padding: 0 4px;
+    justify-content: space-between;
+    /* background-color: red; */
+    display: flex;
+    align-items: center;
+}
+
+#new-post{
+    cursor: pointer;
+    color: var(--light-blue);
+    text-decoration: none;
+}
+
+#posts{
+    width: 600px;
+    /* background-color: blue; */
+    margin-bottom: -100px;
+}
+
+#post{
+    margin: 20px 0;
+    padding: 30px 40px;
+    height: auto;
+    border-radius: 15px;
+    background-color: var(--lesser-dark-blue);
+    overflow: hidden;
+    overflow-x: auto;
+}
+
+#post::-webkit-scrollbar{
+    display: none;
+}
+
+#post h2{
+    color: var(--clay-blue);
+    font-weight: 800;
+    margin-bottom: -5px;
+}
+
+#post #pos{
+    margin-bottom: 20px;
+}
+
+#post p{
+    margin: 0;
+}
+
+#post h4{
+    color: var(--clay-blue);
+    font-weight: 400;
+}
+
+#post-footer{
+    display: flex;
+    justify-content: space-between;
+    /* background-color: blue; */
+    margin-top: 30px;
+}
+
+#post-footer p{
+    color: #535368;
+}
+
+#error{
+    cursor: pointer;
+}
+
+#words-container{
+    z-index: 3;
+}
+
+#search-bar{
+    width: 33vw;
+}
+
+.words-list{
+    width: 33vw;
+}
+
+/* SEARCH BAR */
+.community-showResults{
+    background-color: var(--lesser-dark-blue);
+    border-radius: 18px;
+    width: 600px;
+    padding: 30px 40px;
+    margin: 17px 0;
+    text-align: left;
+}
+
+/* word title */
+.community-showResults h2{
+    margin: 0;
+    margin-bottom: -5px;
+    color: var(--clay-blue);
+    font-weight: 800;
+}
+
+.community-showResults #pos{
+    margin-left: 1px;
+}
+
+/* definition label */
+.community-showResults h4{ 
+    color: var(--clay-blue);
+    margin-top: 20px;
+    margin-bottom: 3px;
+    font-weight: 400;
+}
+
+/* definition text */
+.community-showResults p{
+    margin: 0;
+    color: var(--light-blue);
+}
+ /* part of speech */
+.showResults #pos{
+    margin-bottom: 25px;
+}
+
+@media screen and (max-width:900px){
+    #search-bar{
+        width: 60vw;
+    }
+
+    .words-list{
+        width: 60vw;
+    }
+
+    #search-label{
+        font-size: 4vw;
+    }
+
+    .community-showResults{
+        width: 90vw;
+        margin: 10px 10px;
+    }
+    
+    #posts{
+        width: auto;
+        margin: 0 20px;
+    }
+}
