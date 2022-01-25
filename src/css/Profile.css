@@ -8,7 +8,6 @@
 
 #profile-head{
     height: 40vh;
-    padding-left: 100px;
     justify-content: center;
     display: flex;
     flex-direction: column;
@@ -38,6 +37,13 @@
     font-size: 18px;
 }
 
+#profile-page{
+    flex-direction: column;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
 footer{
     margin-top: 300px;    
 }
@@ -54,6 +60,10 @@ footer{
     #profile-head #full-name{
         flex-direction: column;
         align-items: flex-start;
+    }
+
+    #posts #sub-title{
+        margin-left: 10px;
     }
 }
 
