@@ -8,6 +8,7 @@ import Footer from '../components/Footer';
 import '../css/Home.css'
 
 import { db } from '../firebase';
+import { useAuth } from '../contexts/AuthContext';
 
 
 const Home = () => {
@@ -40,6 +41,9 @@ const Home = () => {
     const [error, setError] = useState("");
 
     const [filteredData, setFilteredData] = useState([]);
+
+    //getting current user info, if exists
+    const {currentUser} = useAuth();
 
     //takes in a word, then searches dictionary by word and finds the relative part of speech & definition
     function getMeaning(userWord) {
@@ -75,7 +79,7 @@ const Home = () => {
             
             <div id = 'body'>
                 
-                {error && <div id = 'error-container'><p id = 'error'>{error}</p></div>}
+                {error && <div id = 'error-container'><p id = 'error' onClick={()=>{setError('')}}>{error}</p></div>}
 
                 <h1>
                     OFFICIAL DICTIONARY
@@ -149,11 +153,21 @@ const Home = () => {
                             trending
                         </a>
                     </Link>
-                    <Link to = '/community'>
-                        <a>
+
+                    {currentUser && (
+                        <Link to = '/community'>
+                            <a>
+                                community
+                            </a>
+                        </Link>
+                    )}
+
+                    {!currentUser && (
+                        <a onClick={()=>{setError('Community requires account')}}>
                             community
                         </a>
-                    </Link>
+                    )}
+
                     <Link to = '/browse'>
                         <a>
                             browse

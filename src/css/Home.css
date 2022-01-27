@@ -143,6 +143,7 @@
     text-decoration: none;
     color: var(--light-blue);
     font-size: 20px;
+    cursor: pointer;
 
     direction: reverse;
     transition: 0.2s;

@@ -14,7 +14,7 @@ const Footer = () => {
                 </div>
             </div>
             <p>
-                v3.0.1
+                v3.0.3
             </p>
         </footer>
     )

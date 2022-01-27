@@ -2,7 +2,7 @@ import { React, useState, useRef } from 'react'
 import { useEffect } from 'react/cjs/react.development'
 import { db } from '../firebase'
 
-import { orderBy } from 'firebase/compat/firestore'
+import { AuthProvider } from '../contexts/AuthContext';
 
 import { Link } from 'react-router-dom'
 
@@ -10,6 +10,7 @@ import NavBar from '../components/NavBar'
 import Footer from '../components/Footer'
 
 import '../css/Community.css'
+import Post from '../components/Post'
 
 const Community = () => {
     
@@ -49,11 +50,11 @@ const Community = () => {
         try{
             setError('');
             const index = posts.map(object => object.word).indexOf(userWord);
-            const wordObj = posts[index];        
+            const wordObj = posts[index];   
             setWord(wordObj.word);
             setPos(wordObj.pos);
             setDef(wordObj.definition);
-            setLikes(wordObj.numLikes);
+            setLikes(wordObj.likes);
             setAcc(wordObj.username)
         } catch {
             setError('404 - word not found');
@@ -153,22 +154,11 @@ const Community = () => {
                         <Link to='/new-post' id='new-post'> + New Definition</Link>
                     </div>
                         {posts.length > 0 ? (
-                            posts.slice(0,10).map((post) => {
+                            posts.slice(0,20).map((post) => {
                                 return(
-                                    <div id = 'post'>
-                                        
-                                        <h2 key={post.key}>{post.word}</h2>
-                                        <p id = 'pos'>{post.pos}</p>
-
-                                        <h4>definition &#8628;</h4>
-                                        <p id = 'definition'>{post.definition}</p> 
-
-                                        <div id = 'post-footer'>
-                                            <p id = 'num-likes'>{post.numLikes} likes</p>
-                                            <p id = 'username'>{post.username}</p>
-                                        </div>
-                                    
-                                    </div>
+                                    <AuthProvider>
+                                        <Post entry = {post}/>
+                                    </AuthProvider>
                                 );
                             })
                         ) : (

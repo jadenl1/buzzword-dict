@@ -18,6 +18,7 @@ import ForgotPassword from './pages/ForgotPassword';
 import UpdateProfile from './pages/UpdateProfile';
 
 import { AuthProvider } from './contexts/AuthContext';
+import Post from './components/Post';
 
 const App = () => {
 

@@ -1,13 +1,14 @@
 import React, {useState, useEffect} from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 
-import { useAuth } from '../contexts/AuthContext'
+import { AuthProvider, useAuth } from '../contexts/AuthContext'
 import {db} from '../firebase'
 
 import NavBar from '../components/NavBar'
 import Footer from '../components/Footer'
 
 import '../css/Profile.css'
+import Post from '../components/Post'
 
 export default function Profile(){
     
@@ -30,7 +31,6 @@ export default function Profile(){
         const subscriber = db
         .collection('posts')
         .where("userID", "==", currentUser.uid)
-        // .orderBy('date', "desc")
         .onSnapshot((querySnapshot) => {
             querySnapshot.forEach((doc) => {
                 getPostsFromFirebase.push({
@@ -44,7 +44,6 @@ export default function Profile(){
         return () => subscriber();
     }, []);
 
-    console.log(posts);
 
     async function handleLogout(){
 
@@ -63,7 +62,7 @@ export default function Profile(){
             <NavBar/>
             <div id="profile-page">
                 <div id='profile-head'>
-                    <p>MY PROFILE</p>
+                    <p>MY PROFILE &#8628;</p>
                     <div id = 'full-name'>
                         <p id = 'name'>{userName}</p>
                         <p id = 'email-ext'>{emailExt}</p>
@@ -78,20 +77,9 @@ export default function Profile(){
                     {posts.length > 0 ? (
                         posts.slice(0,10).map((post) => {
                             return(
-                                <div id = 'post'>
-                                    
-                                    <h2 key={post.key}>{post.word}</h2>
-                                    <p id = 'pos'>{post.pos}</p>
-
-                                    <h4>definition &#8628;</h4>
-                                    <p id = 'definition'>{post.definition}</p> 
-
-                                    <div id = 'post-footer'>
-                                        <p id = 'num-likes'>{post.numLikes} likes</p>
-                                        <p id = 'username'>{post.username}</p>
-                                    </div>
-                                
-                                </div>
+                                <AuthProvider>
+                                    <Post entry = {post}/>
+                                </AuthProvider>
                             );
                         })
                     ) : (

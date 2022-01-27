@@ -38,8 +38,8 @@ const NewPost = () => {
                 definition: defRef.current.value,
                 username: username,
                 userID: currentUser.uid,
-                numLikes: 0,
-                numReports: 0,
+                likes: [],
+                reports: [],
                 date: new Date().toUTCString()
             });
 
