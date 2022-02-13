@@ -7,7 +7,7 @@
 ---
 ### 📝More on the Project:
 
-#### - Launch will most likely be within mid-Feburary of 2022.
+#### - Launch will most likely be within mid-March of 2022, or whenever school stops being hard
 
 #### - I've tried my best to keep everything well documented with notes of each push, so for more information check out the push histories.
 
