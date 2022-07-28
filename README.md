@@ -15,8 +15,3 @@
 ### 📧Contact:
 #### - Talk to me on discord! --> JadenCoolKid#4081
 #### - Email me! --> jleonardSTEM2021@gmail.com
-
----
-### 👏Other Developers:
-#### - Rohan Bhatt --> @rohancodecs
-#### - Aaryan Jadhav --> @AaryanJ45
